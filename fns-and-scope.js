@@ -42,7 +42,7 @@ var name = 'Tyler';
 
 //What is the difference between arguments and parameters?
 
-  //Answer Here
+  //Function parameters are the names listed in the function definition. Function arguments are the real values passed to (and received by) the function.
 
 
 //////////////////PROBLEM 5////////////////////
@@ -52,7 +52,7 @@ var name = 'Tyler';
 //What are all the falsy values in JavaScript and how do you check if something is falsy?
 
 
-  //Answer Here
+  // 0, Nan, undefined, null, false, " ", ' ',
 
 
 
@@ -71,11 +71,11 @@ var name = 'Tyler';
 
 //Now save the function definition of myName into a new variable called newMyName
 
-  var newMyName = myName();
+  var newMyName = myName;
 
 //Now alert the result of invoking newMyName
 
-alert(newMyName);
+alert(newMyName());
 
 //////////////////PROBLEM 7////////////////////
 
@@ -84,11 +84,14 @@ alert(newMyName);
 //Create a function called outerFn which returns an anonymous function which returns your name.
 
   function outerFn() {
-    
+      return function(){
+        return newMyName();
+      }
   }
 
 //Now save the result of invoking outerFn into a variable called innerFn.
 
-  //Code Here
+  var innerFn = outerFn();
 
 //Now invoke innerFn.
+innerFn();
